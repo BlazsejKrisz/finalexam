@@ -1,3 +1,7 @@
+import React from "react";
+import Header from "./Components/Header";
+import CatCard from "./Components/CatCard";
+import "./index.css";
 const cats = [
   {
     id: 1,
@@ -21,7 +25,16 @@ const cats = [
 
 function App() {
   return (
-    <h1>App</h1>
+    <div className="bg-white min-h-screen">
+      <Header />
+      <main className="max-w-4xl mx-auto px-4 py-6">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {cats.map((cat) => (
+            <CatCard key={cat.id} cat={cat} />
+          ))}
+        </div>
+      </main>
+    </div>
   );
 }
 
